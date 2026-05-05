@@ -1,0 +1,49 @@
+{
+  "name": "@joelhooks/pi-feedback",
+  "version": "0.1.0",
+  "description": "Pi extension for reviewing long assistant messages in Cursor or another editor, then sending saved diffs back as feedback.",
+  "type": "module",
+  "license": "MIT",
+  "author": "Joel Hooks <joel@joelhooks.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joelhooks/pi-feedback.git"
+  },
+  "bugs": {
+    "url": "https://github.com/joelhooks/pi-feedback/issues"
+  },
+  "homepage": "https://github.com/joelhooks/pi-feedback#readme",
+  "keywords": [
+    "pi-package",
+    "pi-extension",
+    "pi",
+    "feedback",
+    "cursor",
+    "markdown",
+    "llm"
+  ],
+  "files": [
+    "extensions",
+    "skills",
+    "templates",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "bun build ./extensions/feedback.ts --target=node --outfile=/tmp/pi-feedback-extension.js --external @mariozechner/pi-coding-agent --external @mariozechner/pi-ai",
+    "check": "bun run build",
+    "pack:dry": "npm pack --dry-run"
+  },
+  "pi": {
+    "extensions": [
+      "./extensions"
+    ],
+    "skills": [
+      "./skills"
+    ]
+  },
+  "peerDependencies": {
+    "@mariozechner/pi-ai": "*",
+    "@mariozechner/pi-coding-agent": "*"
+  }
+}
