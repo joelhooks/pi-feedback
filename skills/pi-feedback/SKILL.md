@@ -1,6 +1,7 @@
 ---
 name: pi-feedback
 description: Use when the user wants to review a long assistant response externally, annotate feedback in Cursor or another editor, or use the /feedback workflow. Explains the pi-feedback extension commands and best practices.
+disable-model-invocation: true
 ---
 
 # pi-feedback
